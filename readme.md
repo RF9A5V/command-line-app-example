@@ -19,4 +19,4 @@ CSAS is a command-line application that provides a mechanism to log ingress and 
 - npm run update event <eventId> <personName> <eventType> <locationId>
 - npm run delete location <locationId>
 - npm run delete event <eventId>
-- npm run listEventsAtLocation <locationId>
+- npm run getLocationOfEvent <eventId>

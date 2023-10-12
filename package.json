@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "create": "node index.js create",
     "get": "node index.js get",
     "update": "node index.js update",
     "delete": "node index.js delete",
     "getLocationOfEvent": "node index.js getLocationOfEvent"
+  
   },
   "keywords": [],
   "author": "",

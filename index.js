@@ -10,6 +10,9 @@ const {
 } = require("./src/events");
 const locationAPI = require("./src/locations");
 
+// node index.js create location "Pursuit HQ" "1 Main Street"
+// [node, index.js, "create", "location", "Pursuit HQ", "1 Main Street"]
+
 function processInput() {
   // Get the expected command from the command line
   const expectedCommand = process.argv[2];
@@ -25,12 +28,16 @@ function processInput() {
     if(expectedResource === "location") {
       // We should expect to see a name and address value after the resource, and we grab them
       const [name, address] = process.argv.slice(4);
+      // const name = process.argv[4];
+      // const address = process.argv[5];
       // We take the name and address we got and send it to the createLocation function in an object
       result = locationAPI.createLocation({ name, address });
     }
     // Otherwise if we set our resource as "event"
     else if(expectedResource === "event") {
       // We should expect to see a name, a type, and a locationId after the resource
+      // node index.js create event John Johnson entry bahs
+      // [node, index.js, "create", "event", "John Johnson", "entry", "bahs"]
       const [name, type, locationId] = process.argv.slice(4);
       // Then we send those details to createEvent
       result = createEvent({ locationId, name, type })
@@ -120,4 +127,5 @@ function processInput() {
   console.log(result);
 }
 
+// console.log(process.argv);
 processInput();
